@@ -7,8 +7,11 @@ authors = ["Jaehyung You <jaehyung.you@travelflan.com>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 tqdm = "^4.62.3"
+ipython = "^7.28.0"
+pytest = "^6.2.5"
 
 [tool.poetry.dev-dependencies]
+pytest-cov = "^2.12.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

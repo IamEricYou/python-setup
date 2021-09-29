@@ -1,8 +1,6 @@
 from tqdm import tqdm
  
 class TestClass:
-    variable: str = ""
-    
     def __init__(self, variable: str) -> None:
         self.variable = variable
         
@@ -12,4 +10,5 @@ def test(arg1: int) -> None:
     for i in tqdm(test_list, desc="Looping now"):
         test_list_appended.append(i)
         
-test(arg1=1)        
+def add(x: int, y: int) -> int:
+    return x + y

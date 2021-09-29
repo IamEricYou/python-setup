@@ -61,3 +61,28 @@ Using virtualenv: /Users/username/Library/Caches/pypoetry/virtualenvs/python-set
 Spawning shell within /Users/username/Library/Caches/pypoetry/virtualenvs/python-setup-j-Htv8gO-py3.9
 ```
 
+### use pytest
+```shell
+>>> poetry run pytest
+# install pytest-cov to see more coverage
+>>> poetry add --dev pytest-cov
+>>> poetry run pytest --cov=prac 
+==================================================================== test session starts ====================================================================
+platform darwin -- Python 3.9.7, pytest-6.2.5, py-1.10.0, pluggy-1.0.0
+rootdir: /Users/username/workspace/python-setup
+plugins: cov-2.12.1
+collected 1 item                                                                                                                                            
+
+prac/test_prac.py .                                                                                                                                   [100%]
+
+---------- coverage: platform darwin, python 3.9.7-final-0 -----------
+Name                Stmts   Miss  Cover
+---------------------------------------
+prac/prac.py           11      5    55%
+prac/test_prac.py       4      0   100%
+---------------------------------------
+TOTAL                  15      5    67%
+
+===================================================================== 1 passed in 0.03s =====================================================================
+```
+
