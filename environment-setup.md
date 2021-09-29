@@ -19,6 +19,7 @@
   3.9-dev
 ...
 ```
+<hr/>
 
 ### install Poetry
 
@@ -47,6 +48,7 @@ Python 3.9.7
 Creating virtualenv python-setup-j-Htv8gO-py3.9 in /Users/username/Library/Caches/pypoetry/virtualenvs
 Using virtualenv: /Users/username/Library/Caches/pypoetry/virtualenvs/python-setup-j-Htv8gO-py3.9
 ```
+<hr/>
 
 ### use Poetry
 
@@ -60,6 +62,7 @@ Using virtualenv: /Users/username/Library/Caches/pypoetry/virtualenvs/python-set
 >>> poetry shell
 Spawning shell within /Users/username/Library/Caches/pypoetry/virtualenvs/python-setup-j-Htv8gO-py3.9
 ```
+<hr/>
 
 ### use pytest
 ```shell
@@ -85,6 +88,7 @@ TOTAL                  15      5    67%
 
 ===================================================================== 1 passed in 0.03s =====================================================================
 ```
+<hr/>
 
 ### pre-commit (for git user)
 pre-commit is a tool to run pre-check on every git commit
@@ -95,4 +99,16 @@ install
 # to create sample file for pre-commit use.
 >>> pre-commit sample-config > .pre-commit-config.yaml
 >>> pre-commit run --all-files
+```
+
+<hr/>
+### flake8 [flake8](https://flake8.pycqa.org/en/latest/)
+
+```shell
+>>> poetry run flake8 .
+./prac/prac.py:3:1: E302 expected 2 blank lines, found 1
+./prac/prac.py:7:1: E302 expected 2 blank lines, found 1
+./prac/prac.py:9:36: E231 missing whitespace after ','
+./prac/prac.py:13:1: E302 expected 2 blank lines, found 1
+./prac/test_prac.py:3:1: E302 expected 2 blank lines, found 1
 ```
