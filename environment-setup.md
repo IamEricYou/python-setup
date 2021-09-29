@@ -66,12 +66,12 @@ Spawning shell within /Users/username/Library/Caches/pypoetry/virtualenvs/python
 >>> poetry run pytest
 # install pytest-cov to see more coverage
 >>> poetry add --dev pytest-cov
->>> poetry run pytest --cov=prac 
+>>> poetry run pytest --cov=prac
 ==================================================================== test session starts ====================================================================
 platform darwin -- Python 3.9.7, pytest-6.2.5, py-1.10.0, pluggy-1.0.0
 rootdir: /Users/username/workspace/python-setup
 plugins: cov-2.12.1
-collected 1 item                                                                                                                                            
+collected 1 item
 
 prac/test_prac.py .                                                                                                                                   [100%]
 
@@ -86,3 +86,13 @@ TOTAL                  15      5    67%
 ===================================================================== 1 passed in 0.03s =====================================================================
 ```
 
+### pre-commit (for git user)
+pre-commit is a tool to run pre-check on every git commit
+
+install
+```shell
+>>> poetry add pre-commit --dev
+# to create sample file for pre-commit use.
+>>> pre-commit sample-config > .pre-commit-config.yaml
+>>> pre-commit run --all-files
+```
