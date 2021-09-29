@@ -102,7 +102,8 @@ install
 ```
 
 <hr/>
-### flake8 [flake8](https://flake8.pycqa.org/en/latest/)
+
+### flake8 (link: [flake8](https://flake8.pycqa.org/en/latest/))
 
 ```shell
 >>> poetry run flake8 .
