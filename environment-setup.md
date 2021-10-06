@@ -44,6 +44,8 @@ Python 3.9.7
 
 # if pyenv local doesn't work for you, try this first
 >>> eval "$(pyenv init --path)"
+# if pyenv doesn't change your current shell
+>>> source "$( poetry env list --full-path | grep Activated | cut -d' ' -f1 )/bin/activate"
 >>> poetry env use python
 Creating virtualenv python-setup-j-Htv8gO-py3.9 in /Users/username/Library/Caches/pypoetry/virtualenvs
 Using virtualenv: /Users/username/Library/Caches/pypoetry/virtualenvs/python-setup-j-Htv8gO-py3.9
