@@ -113,3 +113,62 @@ install
 ./prac/prac.py:13:1: E302 expected 2 blank lines, found 1
 ./prac/test_prac.py:3:1: E302 expected 2 blank lines, found 1
 ```
+
+
+<hr/>
+
+### Add `Black` as a formatter
+```shell
+>>> poetry add --dev black --allow-prereleases
+```
+
+and.... add the following sections to `pyproject.toml`
+
+```toml
+[tool.black]
+line-length = 79
+target-version = ['py38']
+include = '\.pyi?$'
+exclude = '''
+
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+  | foo.py           # also separately exclude a file named foo.py in
+                     # the root of the project
+)
+'''
+```
+
+To run
+```shell
+>>> black .
+All done! ✨ 🍰 ✨
+2 files left unchanged.
+>>> pre-commit run --all-files
+Trim Trailing Whitespace.................................................Passed
+Fix End of Files.........................................................Passed
+Check Yaml...............................................................Passed
+Check for added large files..............................................Passed
+flake8...................................................................Passed
+black....................................................................Passed
+```
+
+Add Black to git hooks
+
+```yaml
+-   repo: https://github.com/psf/black
+    rev: 20.8b1
+    hooks:
+      - id: black
+```
