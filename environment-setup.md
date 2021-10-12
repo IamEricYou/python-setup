@@ -233,3 +233,16 @@ If everything works well, you may see these
 prac/test_prac.py:4: note: Use "-> None" if function does not return a value
 Found 1 error in 1 file (checked 2 source files)
 ```
+
+After changes...
+
+```shell
+>>> git commit -m "UPDATE: update mypy to setup"
+Trim Trailing Whitespace.................................................Passed
+Fix End of Files.........................................................Passed
+Check Yaml...............................................................Passed
+Check for added large files..............................................Passed
+flake8...................................................................Passed
+black....................................................................Passed
+mypy.....................................................................Passed
+```

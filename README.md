@@ -6,6 +6,6 @@ poerty
 pytest
 Flake8
 Mypy
-isort
+
 
 ...etc
