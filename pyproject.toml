@@ -9,12 +9,14 @@ python = "^3.9"
 tqdm = "^4.62.3"
 ipython = "^7.28.0"
 pytest = "^6.2.5"
+pydantic = "^1.8.2"
 
 [tool.poetry.dev-dependencies]
 pytest-cov = "^2.12.1"
 pre-commit = "^2.15.0"
 flake8 = "^3.9.2"
 black = {version = "^21.9b0", allow-prereleases = true}
+mypy = "^0.910"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

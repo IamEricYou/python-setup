@@ -1,4 +1,12 @@
 from tqdm import tqdm
+from numbers import Real
+from typing import Union
+
+
+def multiply_two_numbers(
+    a: Union[int, Real], b: Union[int, Real]
+) -> Union[int, Real]:
+    return a * b
 
 
 class TestClass:
@@ -6,7 +14,7 @@ class TestClass:
         self.variable = variable
 
 
-def test(arg1: int) -> None:
+def test() -> None:
     test_list_appended = list()
     test_list = [i for i in range(0, 100000)]
     for i in tqdm(test_list, desc="Looping now"):

@@ -26,7 +26,7 @@
 ```shell
 >>> curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
 >>> source $HOME/.poetry/env
-# to run poertry when shell opens
+# to run poetry when shell opens
 >>> export PATH="$HOME/.poetry/bin:$PATH"
 ```
 
@@ -173,4 +173,63 @@ Add Black to git hooks
     rev: 20.8b1
     hooks:
       - id: black
+```
+
+### Install mypy as a type hinter
+To install
+```shell
+poetry add --dev mypy
+```
+To run
+```shell
+# to all directories
+mypy .
+```
+
+Create `setup.cfg` file and add following lines
+```buildoutcfg
+[mypy]
+follow_imports = silent
+strict_optional = True
+warn_redundant_casts = True
+warn_unused_ignores = True
+disallow_any_generics = True
+check_untyped_defs = True
+no_implicit_reexport = True
+disallow_untyped_defs = True
+ignore_missing_imports = True
+```
+In case, you want to disable mypy on tests,
+
+```buildoutcfg
+[mypy-tests.*]
+ignore_errors = True
+```
+Also, in case, you want to use mypy with Pydantic modules,
+```buildoutcfg
+[mypy]
+plugins = pydantic.mypy
+
+follow_imports = silent
+strict_optional = True
+warn_redundant_casts = True
+warn_unused_ignores = True
+disallow_any_generics = True
+check_untyped_defs = True
+no_implicit_reexport = True
+disallow_untyped_defs = True
+ignore_missing_imports = True
+
+[pydantic-mypy]
+init_forbid_extra = True
+init_typed = True
+warn_required_dynamic_aliases = True
+warn_untyped_fields = True
+```
+
+If everything works well, you may see these
+```shell
+>>> prac/test_prac.py:4: error: Function is missing a return type annotation
+prac/test_prac.py:4: note: Use "-> None" if function does not return a value
+Found 1 error in 1 file (checked 2 source files)
 ```
